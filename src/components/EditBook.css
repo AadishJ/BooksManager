@@ -1,0 +1,13 @@
+.editInput
+{
+    width: 9vw;
+}
+.editInput h4
+{
+    text-align: center;
+}
+.editInput form input
+{
+    width: 6vw;
+    margin: auto;
+}
