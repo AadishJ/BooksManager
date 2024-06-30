@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./EditBook.css"
-function EditBook ( { bookObjID, handleSubmit } )
+function EditBook ( { handleSubmit } )
 {
     let [ title, setTitle ] = useState( "" );
     let handleFormSubmit = ( event ) =>
@@ -12,13 +12,14 @@ function EditBook ( { bookObjID, handleSubmit } )
     {
         setTitle( event.target.value );
     }
-    return ( <div>
-        <h3>Enter new Name</h3>
-        <form onSubmit={ handleFormSubmit } className="form">
-            <input className="editInput" value={ title } onChange={ handleChange } />
-            <button className="editButton">Submit</button>
-        </form>
-    </div>
+    return (
+        <div>
+            <h3>Enter new Name</h3>
+            <form onSubmit={ handleFormSubmit } className="form">
+                <input className="editInput" value={ title } onChange={ handleChange } />
+                <button className="editButton">Submit</button>
+            </form>
+        </div>
     )
 }
 
