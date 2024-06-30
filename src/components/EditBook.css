@@ -1,6 +1,8 @@
 .editInput
 {
+    margin-top: 10px;
     width: 9vw;
+    height: 7vh;
 }
 .editInput h4
 {
@@ -10,4 +12,8 @@
 {
     width: 6vw;
     margin: auto;
+}
+.editButton
+{
+    height: 5vh;
 }

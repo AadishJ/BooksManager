@@ -14,9 +14,9 @@ function EditBook ( { handleSubmit } )
     }
     return (
         <div>
-            <h3>Enter new Name</h3>
+            {/* <h3><label>Enter new Name:</label></h3> */}
             <form onSubmit={ handleFormSubmit } className="form">
-                <input className="editInput" value={ title } onChange={ handleChange } />
+                <input placeholder="Enter new Name" className="editInput" value={ title } onChange={ handleChange } />
                 <button className="editButton">Submit</button>
             </form>
         </div>
