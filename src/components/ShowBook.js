@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./ShowBook.css"
 import Cross from "./SVG/cross.svg"
 import Pencil from "./SVG/pencil.svg"
 import EditBook from "./EditBook"
-function ShowBook ( { bookObj, removeBook, editBook } )
+import booksContext from "../context/books"
+function ShowBook ( { bookObj} )
 {
+    const { removeBook } = useContext( booksContext );
     let [ isEdit, setIsEdit ] = useState( false )
     let handleClick = () =>
     {
@@ -18,14 +20,13 @@ function ShowBook ( { bookObj, removeBook, editBook } )
         <div>Name: { bookObj.title }</div>
         <div>ID: { bookObj.id }</div>
     </div>;
-    let handleSubmit = (title)=>
+    let handleSubmit = ()=>
     {
         setIsEdit( false );
-        editBook(title,bookObj.id)
     }
     if ( isEdit )
     {
-        content = <EditBook handleSubmit={handleSubmit} />
+        content = <EditBook handleSubmit={handleSubmit} bookObj={bookObj} />
     }
     return (
         <div className="book">
